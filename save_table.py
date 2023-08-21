@@ -18,7 +18,7 @@ def generate_data_frame() -> pd.DataFrame:
 def save_data_frame(frame: pd.DataFrame, path: pathlib.Path, table_name: str):
     """Save the data frame to sqlite."""
     conn = sqlite3.connect(path)
-    frame.to_sql(table_name, conn, if_exists='replace')
+    frame.to_sql(table_name, conn, if_exists='replace', index=False)
 
 
 # Data folder is relative to the location of this file.
@@ -32,4 +32,3 @@ data_frame = generate_data_frame()
 
 save_data_frame(data_frame, data_folder / 'pandas_sqlite.sqlite',
                 'simple_table')
-
