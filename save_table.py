@@ -25,9 +25,11 @@ def save_data_frame(frame: pd.DataFrame, path: pathlib.Path, table_name: str):
 code_folder = pathlib.Path(__file__).resolve().parents[0]
 data_folder = code_folder.parents[0] / 'data'
 if not data_folder.exists():
+    print('creating data folder')
     data_folder.mkdir()
 
 data_frame = generate_data_frame()
 
 save_data_frame(data_frame, data_folder / 'pandas_sqlite.sqlite',
                 'simple_table')
+
