@@ -10,6 +10,8 @@ import pandas as pd
 # This is to suppress warnings from mypy about pandas.
 # mypy: disable-error-code=import
 
+# Testing github.
+
 # Data folder is relative to the location of this file.
 code_folder = pathlib.Path(__file__).resolve().parents[0]
 data_folder = code_folder.parents[0] / 'data'
